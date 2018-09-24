@@ -1,0 +1,38 @@
+  <h1><%= @chunk[:name] %>     <i><small><%= @chunk[:bio] %></small></i>  </h1>
+
+  <blockquote>
+    <h5><%= @chunk[:company] %></h5>
+    <small>  <%= @chunk[:location] %>   <i class="icon-map-marker"></i>   Planet Earth    🌍 </small>
+  </blockquote>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 img">
+        <img src="<%= @chunk[:avatar_url] %>"  class="img-rounded" >
+      </div>
+
+
+      <div class="col-md-6 details">
+        <p>
+          <a href='<%= @chunk[:html_url] %>'><%= @chunk[:login] %></a><br>
+
+          <a href='<%= @chunk[:blog] %>'><%= @chunk[:blog] %></a> <br>
+
+          <%= @chunk[:public_repos] %> public repositories <br>
+          <%= @chunk[:followers] %> followers <br>
+          <%= @chunk[:following] %> following <br><br>
+
+          user since <%= @chunk[:created_at] %> <br>
+          last updated on <%= @chunk[:updated_at] %> <br>
+
+          <br>
+          <% if  @chunk[:hireable] == true %>
+          (💁‍♀️hire me!🙋‍♂️)
+          <% end  %>
+
+
+        </p>
+      </div>
+    </div>
+  </div>
+  <p><a href='/'>Look up another person</a></p>

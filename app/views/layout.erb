@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8' />
+  <title>GH User Lookup</title>
+
+  <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <style>
+
+
+
+  .bg-img {
+    background-image: url('/Octocat.png');
+
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+
+    height: 100%;
+    /* min-height: 780px; */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .container{
+    padding:5%;
+  }
+  .container .img{
+    text-align:center;
+  }
+  .container .details{
+    border-left:3px solid #ded4da;
+  }
+  .container .details p{
+    font-size:15px;
+    font-weight:bold;
+  }
+
+  .img-rounded {
+    width:60%;
+    /* max-width:60px; */
+  }
+
+</style>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<!-- <link rel="icon" type="image/ico" href="/images/favicon.ico" /> -->
+
+
+</head>
+
+
+<body class='container'>
+  <%= yield %>
+</body>
+</html>
