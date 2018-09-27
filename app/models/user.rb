@@ -18,7 +18,7 @@ class User
   end
 
   def self.fetch_data(username)
-    client = Octokit::Client.new(login: "sammarcus", access_token: "6686d53decb3f86933788a3695da133d3540456c")
+    client = Octokit::Client.new(login: "sammarcus", access_token: ENV["GITHUB_PROFILE_DATA_TOKEN"])
     user = username
     response = client.user(username)
     response = response.to_h
@@ -44,10 +44,8 @@ class User
   end
 
   def self.runner(username)
-    # username = "sam"
     response = fetch_data(username)
     output = sort_values(response)
-    # binding.pry
   end
 end
 
