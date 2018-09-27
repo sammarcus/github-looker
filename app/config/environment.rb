@@ -6,7 +6,3 @@ require_all 'app/'
 
 also_reload './index.erb'
 also_reload './user_form.rb'
-
-# configure :production do
-#   enable :reloader
-# end
