@@ -1,25 +1,8 @@
-require 'json'
-require 'net/http'
-require 'octokit'
-require 'pry'
-require 'pry-remote'
-require 'pry-nav'
-# require 'pry-byebug'
-
 class User
 
-  attr_accessor :chunk
-
-
-  def initialize(username)
-    self.username = username
-    @response = response
-    @chunk = chunk
-  end
 
   def self.fetch_data(username)
     client = Octokit::Client.new(login: "sammarcus", access_token: ENV["GITHUB_PROFILE_DATA_TOKEN"])
-    user = username
     response = client.user(username)
     response = response.to_h
   end
