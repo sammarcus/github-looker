@@ -1,11 +1,8 @@
 require 'sinatra'
 require "sinatra/reloader"
-require "sinatra/reloader"
 require "require_all"
 
-require_all 'controllers'
-require_all 'models'
-require_all 'views'
+require_all 'app/'
 
 also_reload './index.erb'
 also_reload './user_form.rb'
