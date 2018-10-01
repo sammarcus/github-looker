@@ -11,8 +11,10 @@ class ApplicationController < Sinatra::Base
 
   post '/result' do
     @title = "#{params['username']} information"
-    username = params['username']
-    @chunk = User.runner(username)
+
+    @username = params['username']
+    @user = User.new(@username)
+    @result_data = @user.load_from_github(@username)
     erb :result
   end
 

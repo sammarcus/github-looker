@@ -1,13 +1,17 @@
 class User
 
+  def initialize(username)
+    @username = username
+  end
 
-  def self.fetch_data(username)
+
+  def fetch_data(username)
     client = Octokit::Client.new(login: "sammarcus", access_token: ENV["GITHUB_PROFILE_DATA_TOKEN"])
     response = client.user(username)
     response = response.to_h
   end
 
-  def self.sort_values(response)
+  def sort_values(response)
     chunk = {
       :login  => response[:login],
       :avatar_url  => response[:avatar_url],
@@ -26,7 +30,7 @@ class User
     }
   end
 
-  def self.runner(username)
+  def load_from_github(username)
     response = fetch_data(username)
     output = sort_values(response)
   end
