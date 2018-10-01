@@ -9,10 +9,12 @@ class ApplicationController < Sinatra::Base
   set :show_exceptions, :after_handler
 
   get '/' do
+    @title = "GH User Lookup Start"
     erb :index
   end
 
   post '/result' do
+    @title = "#{params['username']} information"
     username = params['username']
     @chunk = User.runner(username)
     erb :result
